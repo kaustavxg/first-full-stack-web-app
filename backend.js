@@ -65,7 +65,7 @@ app.post('/signup',logger ,function(req, res){
     })
 
     res.json({
-        message: "user added successfully"
+        message: `user added successfully with username: ${username} and password: ${password}`
     })
 
 })
@@ -79,13 +79,12 @@ app.post('/signin',logger , function(req, res){
 
     if(!foundUser){
         res.status(404).json({
-            error: "invalid username or password"
+            error: "Invalid credentials"
         })
-        
     } else {
         //# generate a JWT
         const token = jwt.sign({
-            username: users.username
+            username: username
         }, JWT_SECRET)
 
          res.json({
@@ -95,7 +94,6 @@ app.post('/signin',logger , function(req, res){
 })
 
 function auth(req, res, next){
-    
 
     const token = req.headers.token;
 
@@ -103,6 +101,7 @@ function auth(req, res, next){
         res.status(404).json({
             error: "token is missing"
         })
+        return;
     } 
 
     try {
@@ -144,5 +143,5 @@ app.get('/me', auth ,logger ,function(req, res){
 })
 
 app.listen(8080, () => {
-    console.log("listening on port 3030");
+    console.log("listening on port 8080");
 })
