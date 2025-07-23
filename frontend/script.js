@@ -2,7 +2,7 @@ async function signup() {
     const username = document.getElementById('signup-username').value;
     const password = document.getElementById('signup-password').value;
 
-    const response = await axios.post("http://localhost:8080/signup", {
+    const response = await axios.post("https://first-full-stack-app.onrender.com/signup", {
         username: username,
         password: password
     })
@@ -13,7 +13,7 @@ async function signin(){
     const username = document.getElementById('signin-username').value;
     const password = document.getElementById('signin-password').value;
 
-    const response = await axios.post("http://localhost:8080/signin", {
+    const response = await axios.post("https://first-full-stack-app.onrender.com/signin", {
         username: username,
         password: password
     })
@@ -28,7 +28,7 @@ async function getInformation(){
     const token = localStorage.getItem("token");
 
     if(token){
-        const response = await axios.get("http://localhost:8080/me", {
+        const response = await axios.get("https://first-full-stack-app.onrender.com/me", {
             headers: {
                 token: token
             }
