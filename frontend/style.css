@@ -5,6 +5,14 @@ body {
     padding: 20px;
 }
 
+.header-title {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
 div {
     background: white;
     border: 1px solid #ddd;
@@ -52,4 +60,22 @@ button:hover {
 
 #information:hover {
     background: #2d8f47;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #666;
+    font-size: 14px;
+}
+
+.github-link {
+    color: #4285f4;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.github-link:hover {
+    color: #3367d6;
+    text-decoration: underline;
 }
